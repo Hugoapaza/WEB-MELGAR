@@ -1,0 +1,1295 @@
+/* ===========================
+   MELGAR.CSS (optimizado)
+   Basado en tu CSS original, limpio y con animaciones
+   =========================== */
+
+/* ==================== VARIABLES GLOBALES ==================== */
+:root {
+  --color-primario: #f7f8f8;
+  --color-secundario: #000000;
+  --color-fondo: #10a4d1;
+  --color-texto: #2b2a2a;
+  --color-blanco: #ffffff;
+  --color-acento: #e63946; /* rojo usado en fechas */
+  --color-verde: #A8C142;
+  --color-menu: #04649b;
+  --bg-gradient-start: rgba(151, 185, 199, 1);
+  --bg-gradient-mid: rgba(87, 171, 199, 1);
+  --bg-gradient-end: rgba(77, 174, 235, 1);
+
+  --font-base: Arial, sans-serif;
+  --fs-base: 14px;
+  --fs-sub: 12px;
+  --fs-titulo: 2em;
+
+  --spacing: 15px;
+  --radius: 10px;
+
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.12);
+
+  --transition: all 0.28s ease;
+}
+
+/* ==================== RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: var(--font-base);
+  line-height: 1.6;
+  color: var(--color-texto);
+  background: linear-gradient(
+    90deg,
+    var(--bg-gradient-start) 0%,
+    var(--bg-gradient-mid) 50%,
+    var(--bg-gradient-end) 100%
+  );
+  -ms-overflow-style: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==================== UTILS / ANIMACIONES ==================== */
+.loading {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.in-view,
+.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+    transform: scale(1.04);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transform: scale(1);
+  }
+}
+
+/* ==================== HEADER-ARRIBA (superior) ==================== */
+    .header-arriba {
+      background: var(--color-menu);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 20px;
+      min-height: 80px;
+    }
+
+    /* Logo municipalidad - IZQUIERDA */
+    .logo-muni {
+      width: 200px;
+      height: auto;
+      max-width: none;
+      filter: brightness(1.2) contrast(1.2);
+    }
+
+    /* Contenedor centro-derecha */
+    .head-img {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: space-around;
+    }
+
+    /* Serenazgo - CENTRO */
+    .serenazgo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--color-blanco);
+    }
+
+    .icon i {
+      font-size: 45px;
+      color: var(--color-blanco);
+    }
+
+    .text h5 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      color: var(--color-blanco);
+      margin: 0;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .text p {
+      font-size: 25px;
+      font-weight: 900;
+      color: var(--color-verde);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    /* Contenedor derecha con logos */
+    .header-right-logos {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Libro de reclamaciones y portal transparencia */
+    .libro-reclamaciones {
+      width: 140px;
+      height: auto;
+    }
+
+    .portal-transparencia {
+      width: 110px;
+      height: auto;
+    }
+
+/* ==================== HEADER / NAVEGACIÓN PRINCIPAL ==================== */
+    .site-header {
+      background: var(--color-fondo);
+      padding: 0;
+      position: relative;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      min-height: 55px;
+      gap: 20px;
+    }
+
+    /* Hamburger (oculto en desktop) */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-blanco);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* Navegación principal */
+    .nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .menu li {
+      position: relative;
+    }
+
+    .menu li a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 12px;
+      text-decoration: none;
+      color: var(--color-blanco);
+      font-size: 13px;
+      font-weight: 600;
+      transition: var(--transition);
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .menu li a:hover {
+      background: var(--color-menu);
+      transform: translateY(-1px);
+    }
+
+    .menu li a i {
+      font-size: 14px;
+    }
+
+    /* INICIO - estilo especial */
+    .menu .inicio {
+      color: var(--color-blanco);
+      font-weight: 700;
+    }
+
+    .menu .inicio:hover {
+      background: #e8e8e8;
+      color: var(--color-texto);
+      transform: translateY(-1px);
+    }
+
+    /* Caret dropdown */
+    .caret {
+      font-size: 10px;
+      margin-left: 4px;
+      transition: transform 0.2s ease;
+    }
+
+    /* Submenu */
+    .submenu {
+  list-style: none;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-fondo);
+  min-width: 220px;
+  border-radius: 0 0 6px 6px;
+  z-index: 100;
+  padding: 6px 0;
+  box-shadow: var(--shadow-sm);
+      z-index: 200;
+    }
+
+
+
+    .menu li:hover > .submenu {
+  display: block;
+}
+
+    .submenu li a {
+  display: block;
+  padding: 8px 12px;
+  color: var(--color-secundario);
+  background: var(--color-blanco);
+    }
+
+    .submenu li a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: none;
+    }
+
+    /* Iniciar sesión - DERECHA */
+    .iniciar-sesion {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .Portal-transparencia {
+      width: 100px;
+      height: auto;
+    }
+
+    .boton {
+      background: var(--color-texto);
+      color: var(--color-blanco);
+      padding: 8px 14px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .boton:hover {
+      background: #d32f2f;
+      transform: translateY(-1px);
+    }
+
+/* ==================== SLIDER / HERO (VIDEOS) ==================== */
+.slider {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  height: 350px;
+  overflow: hidden;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  background: #000;
+}
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+.slides video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* botones prev/next */
+.buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 12px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+.buttons button {
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+.buttons button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-3px);
+}
+
+/* indicadores (puntos) */
+.indicators {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+.indicators .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.indicators .dot.active {
+  background: #fff;
+  transform: scale(1.15);
+}
+
+/* ==================== SERVICES (Enlaces rápidos) ==================== */
+.services-section {
+  padding: 50px 20px;
+}
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.services-divider {
+  height: 4px;
+  background: linear-gradient(90deg, #ffeb3b, #4caf50, #2196f3);
+  margin: 30px 0;
+  border-radius: 2px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin: 40px 0;
+}
+.service-card {
+  padding: 20px 15px;
+  text-align: center;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  backdrop-filter: blur(2px);
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.service-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px;
+}
+.service-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primario);
+  margin-bottom: 8px;
+}
+.service-description {
+  font-size: 11px;
+  color: #111;
+  line-height: 1.4;
+}
+
+.pagos-linea{
+  width: 200px;
+  height: auto;
+}
+
+.service-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-title:hover{
+  color: #108805;
+}
+
+/* ==================== NEWS / NOTICIAS ==================== */
+.news-section {
+  padding: 50px 20px;
+  background: var(--color-blanco);
+}
+.news-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-title {
+  color: #9ccc00;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.noticias {
+  padding: 20px;
+}
+.noticias-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.noticias-left {
+  flex: 2;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.noticia-principal {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* grid de cards: 3 columnas */
+.noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* tarjeta noticia */
+.noticia-card {
+  background: var(--color-blanco);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+.noticia-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.noticia-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Fecha base (modificadores para posicionamiento en desktop) */
+.fecha {
+  background: var(--color-fondo);
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  display: inline-block;
+  border-radius: 3px;
+  text-align: center;
+  position: absolute;
+  height: 60px;
+  width: 40px;
+  line-height: 1.2;
+  transition: all 0.3s ease;
+}
+/* posiciones (posiciones en px heredadas del original, ajustables en responsive) */
+.fecha--1 {
+  bottom: 170px;
+  right: 190px;
+}
+.fecha--2 {
+  bottom: 140px;
+  left: 0px;
+}
+.fecha--3 {
+  top: 70px;
+  left: 0px;
+}
+.fecha--4 {
+  top: 120px;
+  left: 0px;
+}
+.fecha--5 {
+  bottom: 130px;
+  left: 0px;
+}
+.fecha--6 {
+  top: 180px;
+  left: 0px;
+}
+
+/* hover efecto sobre fechas */
+[class^="fecha"]:hover {
+  background: #faf8f8;
+  color: #f50808;
+  cursor: pointer;
+  transform: scale(1.08);
+  transition: all 0.3s ease;
+}
+
+/* noticia textos */
+.noticia-card h2 {
+  font-size: 16px;
+  margin: 10px;
+}
+.noticia-card h2 a {
+  text-decoration: none;
+  color: #222;
+}
+.noticia-card h2 a:hover {
+  color: var(--color-acento);
+}
+.noticia-card .news-description {
+  font-size: 13px;
+  color: #666;
+  padding: 0 10px 18px;
+}
+
+/* columna derecha (sidebar) */
+.noticias-right {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.noticias-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+/* ==================== INFO CARDS ==================== */
+.info-cards-section {
+  padding: 50px 20px;
+  background: #f8f9fa;
+}
+.info-cards-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.info-card {
+  background: var(--color-blanco);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  cursor: pointer;
+}
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.info-card-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+.info-card-body {
+  padding: 18px;
+  text-align: center;
+}
+.info-card-body h3 {
+  color: #2a5298;
+  margin-bottom: 8px;
+}
+
+/* ==================== PORTAL MUNICIPAL ==================== */
+.portal-municipalidad {
+  background: #cecccc;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 15px;
+}
+.portal-municipalidad h6 {
+  font-family: "Rubik", sans-serif;
+  margin-bottom: 6px;
+}
+.portal-municipalidad h3 {
+  color: #36b110;
+  font-weight: 800;
+  font-size: 25px;
+  margin: 0;
+}
+
+/* ==================== ADDITIONAL SERVICES ==================== */
+.additional-services {
+  padding: 50px 20px;
+  background: var(--color-menu);
+  color: #fff;
+}
+.additional-services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.additional-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+.additional-card {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.additional-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-sm);
+}
+.additional-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==================== COVID SECTION ==================== */
+.covid-section {
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #9ccc00, #7cb300);
+  color: #fff;
+}
+.covid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.covid-content h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.covid-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 18px;
+}
+.covid-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.06);
+  transition: var(--transition);
+}
+.covid-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-6px);
+}
+.covid-graphic {
+  width: 250px;
+  height: 250px;
+  background: url("https://munimarianomelgar.gob.pe/wp-content/uploads/2021/06/covid.png")
+    center/contain no-repeat;
+}
+
+/* ==================== OBRAS (SWIPER) ==================== */
+.obras-municipales {
+  max-height: 600px;
+  padding: 40px;
+  background: #ffffff;
+}
+.titulo-obras h2 {
+  text-align: center;
+  padding: 5px;
+  color: #108805;
+  font-weight: bold;
+  font-size: 2em;
+  background: #fff;
+}
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  background: #fffdfd;
+  padding-bottom: 60px;
+}
+.swiper {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 20px;
+}
+.swiper-slide {
+  background: rgb(238, 239, 243);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.slide-logo {
+  width: 150px;
+  margin-bottom: 1rem;
+}
+.slide-description {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+.slide-meta {
+  font-weight: 700;
+  color: #004080;
+}
+
+/* posicionamiento flechas swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #004080;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.swiper-button-prev {
+  left: 150px;
+  transform: translate(-50%, -50%);
+}
+.swiper-button-next {
+  right: 150px;
+  transform: translate(50%, -50%);
+}
+
+/* partners logos slider */
+.slider-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background: #7b8eb6;
+  padding: 20px;
+}
+.swiper.mySwiper {
+  width: 90%;
+  max-width: 900px;
+  padding: 15px 0;
+}
+.swiper-slide.log img {
+  width: 60%;
+  height: auto;
+  max-height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.swiper-slide.log:hover img {
+  transform: scale(1.05);
+}
+
+/* ==================== FOOTER / LIBRO DE RECLAMACIONES ==================== */
+.footer-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background: #0a214d;
+  color: #fff;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.footer-logo-text {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+.social-link {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.img-logo {
+  width: 220px;
+  height: auto;
+}
+
+/* footer final */
+.footer {
+  background: #678ffd;
+  color: #fff;
+  padding: 20px 20px;
+}
+.footer-bottom {
+  font-size: 16px;
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ==================== WHATSAPP FLOAT ==================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  max-width: 350px;
+  animation: pulse 2s infinite;
+  transition: var(--transition);
+}
+.whatsapp-float:hover {
+  transform: translateY(-4px);
+}
+
+/* ==================== BOTON SCROLLTOP ==================== */
+.btn-scrolltop {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 15px 17px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+.btn-scrolltop-on {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.btn-scrolltop:hover {
+  background-color: #0056b3;
+}
+
+/* ==================== LOADING / VIEW ANIMATION (aplica .in-view) ==================== */
+section,
+.service-card,
+.noticia-card,
+.info-card,
+.additional-card,
+.swiper-slide {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* ==================== FIN ESTILOS PRINCIPALES ==================== */
+
+/* --------------------------------------------------------------
+   MEDIA QUERIES (agrupadas y comentadas al final)
+   - Desktop (por defecto)
+   - Tablet (<= 1024px)
+   - Mobile (<= 768px)
+   - Small Mobile (<= 480px)
+   -------------------------------------------------------------- */
+
+/* Tablet: ajustes intermedios */
+@media (max-width: 1024px) {
+  /* Header arriba */
+  .header-arriba {
+    gap: 40px;
+    padding: 12px 18px;
+  }
+  .menu {
+    gap: 10px;
+  }
+  
+
+  /* Noticias: pasar grid de 3 columnas a automático */
+  .noticias-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  /* Swiper arrows menos extremos */
+  .swiper-button-prev {
+    left: 100px;
+  }
+  .swiper-button-next {
+    right: 100px;
+  }
+
+  /* Obras swiper: mostrar 1-2 slides segun ancho */
+  .swiper-slide {
+    padding: 1rem;
+  }
+
+  /* Ajuste general */
+  .slider {
+    height: 320px;
+  }
+}
+
+/* Mobile: menú colapsable y reflow de columnas */
+@media (max-width: 768px) {
+  .header-arriba {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 15px 20px;
+  }
+
+  .header-right-logos{
+    display: none;
+    gap: 12px;
+  }
+
+  .logo-muni{
+    width: 200px;
+    order: 1;
+  }
+
+  nav ul.menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--color-menu);
+    flex-direction: column;
+    padding: 12px 18px;
+    z-index: 1000;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  nav ul.menu.active {
+    display: flex;
+    max-height: 800px;
+  }
+  .hamburger {
+    display: block;
+    color: var(--color-primario);
+    background: none;
+    border: none;
+    font-size: 22px;
+  }
+
+  .iniciar-sesion .Portal-transparencia{
+    width: 100px;
+    height: auto;
+  }
+
+  .boton{
+    font-size: 12px;
+  }
+
+  /* Ajustes slider */
+  .slider {
+    height: 260px;
+    width: 95%;
+    margin: 20px auto;
+  }
+  .slides {
+    margin-top: 0;
+  }
+
+  /* Noticias: pasar columnas a 1-2 segun tamaño */
+  .noticias-container {
+    flex-direction: column;
+  }
+  .noticias-right {
+    order: 2;
+  }
+  .noticias-left {
+    order: 1;
+  }
+  .noticias-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  /* Posiciones de .fecha se simplifican (móviles) */
+  /* Fechas - posicionamiento móvil simplificado */
+  .fecha {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 40px;
+    width: 30px;
+    font-size: 10px;
+    padding: 4px 2px;
+    line-height: 1.1;
+    border-radius: 4px;
+  }
+  
+  .fecha--1, .fecha--2, .fecha--3, .fecha--4, .fecha--5, .fecha--6 {
+    top: 8px;
+    right: 8px;
+    bottom: auto;
+    left: auto;
+  }
+
+    /* COVID - layout móvil */
+  .covid-section {
+    padding: 30px 15px;
+  }
+  
+  .covid-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .covid-content h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+  
+  .covid-content p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .covid-graphic {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+  }
+  
+  .covid-buttons {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .covid-btn {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  /* Swiper botones ocultos para pantallas pequeñas */
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+
+  /* Footer container: columna */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .copy{
+    text-align: center;
+    color: #fffdfd;
+  }
+
+  .autor{
+    color: #030000;
+  }
+
+  /* WhatsApp float más pequeño */
+  .whatsapp-float {
+    bottom: 12px;
+    right: 10px;
+    padding: 10px 12px;
+    font-size: 20px;
+    max-width: 220px;
+  }
+
+  .wa-text{
+    display: none;
+  }
+
+  /* Boton Scroll Top */
+  .btn-scrolltop{
+    width: 30px;
+    height: auto;
+    padding: 10px;
+    right: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+}
+
+/* Small mobile: ajustes finos */
+@media (max-width: 480px) {
+  .header-inner {
+    padding: 0 8px;
+  }
+  .logo-muni {
+    width: 140px;
+  }
+  .header-right-logos{
+    display: none;
+  }
+  .slider {
+    height: 220px;
+  }
+  .slide-logo {
+    width: 120px;
+  }
+  .portal-municipalidad h3 {
+    font-size: 18px;
+  }
+  .section-title {
+    font-size: 22px;
+  }
+  .service-title {
+    font-size: 16px;
+  }
+  .info-card-image {
+    height: 150px;
+  }
+  .noticia-card h2 {
+    font-size: 14px;
+  }
+  .noticia-card .news-description {
+    font-size: 13px;
+  }
+  .btn-scrolltop {
+    bottom: 80px;
+    right: 16px;
+    padding: 12px;
+    font-size: 18px;
+  }
+}
+
+/* ---------------------------
+   NOTAS:
+   - Las posiciones exactas de .fecha--1...--6 conservan su ubicación
+     similar al diseño original para pantallas grandes. En móviles
+     se reubicaron a la esquina superior derecha para evitar solapamientos.
+   - Si deseas cambiar alguna posición de fecha en desktop, ajusta
+     .fecha--N en la sección principal.
+   - Todos los media queries están agrupados al final tal como pediste.
+   --------------------------- */

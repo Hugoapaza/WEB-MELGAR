@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Municipalidad Distrital de Mariano Melgar</title>
+
+  <!-- Font Awesome (única carga) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- Swiper (único import para sliders/partners/obras) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+  <!-- Tu CSS (en la siguiente parte te lo doy completo) -->
+  <link rel="stylesheet" href="WebMelgar.css" />
+</head>
+<body>
+  <!-- ================= HEADER ARRIBA (EXACTO AL ORIGINAL) ================= -->
+  <nav class="header-arriba" aria-label="Cabecera superior">
+    <!-- Contenedor central y derecho -->
+    <div class="head-img">
+      <!-- Logo municipalidad - IZQUIERDA -->
+    <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/muni-marianomelgar.png" alt="Escudo Municipalidad Mariano Melgar" class="logo-muni" />
+
+      <!-- Logos derecha - LIBRO RECLAMACIONES Y PORTAL TRANSPARENCIA -->
+      <div class="header-right-logos">
+              <!-- Serenazgo -->
+      <div class="serenazgo" aria-hidden="false">
+        <div class="icon" aria-hidden="true">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="text">
+          <h5>SERENAZGO</h5>
+          <p>054-455041</p>
+        </div>
+      </div>
+
+        <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/LRDMM.svg" alt="Libro de Reclamaciones" class="libro-reclamaciones" />
+        <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/gestion.png" alt="Portal de Transparencia" class="portal-transparencia" />
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HEADER / NAVEGACIÓN PRINCIPAL ================= -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      
+      <!-- Hamburger (móvil) -->
+      <button id="hamburger" class="hamburger" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Navegación principal -->
+      <nav aria-label="Menú principal" class="nav">
+        <ul id="menu" class="menu">
+          <li><a class="inicio" href="#"><i class="fa-solid fa-house"></i> INICIO</a></li>
+
+          <li class="has-sub">
+            <a href="#"><i class="fa-solid fa-city"></i> DISTRITO <i class="fa-solid fa-caret-down caret"></i></a>
+            <ul class="submenu">
+              <li><a href="#">Historia del Distrito</a></li>
+              <li><a href="#">Ubicación Geográfica</a></li>
+              <li><a href="#">Datos Generales</a></li>
+            </ul>
+          </li>
+
+          <li class="has-sub">
+            <a href="#"><i class="fa-solid fa-building-columns"></i> MUNICIPALIDAD <i class="fa-solid fa-caret-down caret"></i></a>
+            <ul class="submenu">
+              <li><a href="#">Organigrama</a></li>
+              <li><a href="#">Funcionarios</a></li>
+              <li><a href="#">Misión y Visión</a></li>
+            </ul>
+          </li>
+
+          <li class="has-sub">
+            <a href="#"><i class="fa-solid fa-scale-balanced"></i> NORMATIVIDAD <i class="fa-solid fa-caret-down caret"></i></a>
+            <ul class="submenu">
+              <li><a href="#">Ordenanzas</a></li>
+              <li><a href="#">Resoluciones</a></li>
+            </ul>
+          </li>
+
+          <li class="has-sub">
+            <a href="#"><i class="fa-solid fa-briefcase"></i> SERVICIOS <i class="fa-solid fa-caret-down caret"></i></a>
+            <ul class="submenu">
+              <li><a href="#">Limpieza Pública</a></li>
+              <li><a href="#">Seguridad Ciudadana</a></li>
+            </ul>
+          </li>
+
+          <li class="has-sub">
+            <a href="#"><i class="fa-solid fa-file-signature"></i> TRÁMITES <i class="fa-solid fa-caret-down caret"></i></a>
+            <ul class="submenu">
+              <li><a href="#">Licencias de Funcionamiento</a></li>
+              <li><a href="#">Licencias de Edificación</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#"><i class="fa-regular fa-newspaper"></i> NOTICIAS</a></li>
+          <li><a href="#"><i class="fa-solid fa-envelope"></i> WEBMAIL</a></li>
+        </ul>
+      </nav>
+
+      <!-- Iniciar sesión - DERECHA con imagen más pequeña -->
+      <div class="iniciar-sesion">
+        <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/portal.png" class="Portal-transparencia" alt="Portal" />
+        <a class="boton" href="Login.html" target="_blank">Iniciar Sesión</a>
+      </div>
+      
+    </div>
+  </header>
+
+  <!-- ================= HERO / SLIDER DE VIDEOS ================= -->
+  <section class="hero">
+    <div class="slider" aria-roledescription="carrusel de videos">
+      <div class="slides" id="slides">
+        <video src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/imagenes-dron.mp4" autoplay muted loop playsinline></video>
+        <video src="video2.mp4" muted loop playsinline></video>
+        <video src="video3.mp4" muted loop playsinline></video>
+      </div>
+
+      <div class="buttons" aria-hidden="true">
+        <button class="nav-btn prev" id="prevSlide" aria-label="Slide anterior"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="nav-btn next" id="nextSlide" aria-label="Siguiente slide"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+
+      <div class="indicators" id="indicators" aria-hidden="false"></div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES / ENLACES RÁPIDOS ================= -->
+  <section class="services-section" id="services">
+    <div class="services-container">
+      <div class="services-divider" aria-hidden="true"></div>
+      <div class="services-grid">
+        <!-- Usamos data-link y JS para abrir enlaces (mejor que onclick inline) -->
+        <div class="service-card" data-link="https://munimarianomelgar.gob.pe/wp-content/uploads/2022/02/TUPA-Integral-Mno.Melgar-Oct.pdf">
+          <div class="service-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/insurance_hover.svg')"></div>
+          <div class="service-title">TUPA</div>
+          <div class="service-description">Texto Único de Procedimientos Administrativos</div>
+        </div>
+
+        <div class="service-card" data-link="https://api.iuvade.com/oficina_marianomelgar/#login">
+          <div class="service-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/computer_hover-1.svg')"></div>
+          <div class="service-title">Mesa de Partes Virtual</div>
+          <div class="service-description">Sistema de gestión documentaria online</div>
+        </div>
+
+        <div class="service-card" data-link="https://iuvade.com/siggo/marianomelgar/">
+          <div class="service-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2025/08/Buscar_Expediente-1.png')"></div>
+          <div class="service-title">Seguimiento de Expedientes</div>
+          <div class="service-description">Consulta el estado de tus trámites</div>
+        </div>
+
+        <div class="service-card" data-link="https://munimarianomelgar.gob.pe/tramites/licencias-de-edificacion/">
+          <div class="service-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/skyline_hover.svg')"></div>
+          <div class="service-title">Licencias de Edificación</div>
+          <div class="service-description">Permisos para actividades comerciales</div>
+        </div>
+
+        <div class="service-card" data-link="https://munimarianomelgar.gob.pe/tramites/licencias-de-edificacion/">
+          <div class="service-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads//2020/09/diploma_hover.svg')"></div>
+          <div class="service-title">Licencias de Funcionamiento</div>
+          <div class="service-description">Permisos para actividades comerciales</div>
+        </div>
+
+        <div class="service-img" data-link="#">
+          <div class="service-icon">
+            <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2024/06/pagos-en-linea-2.png" class="pagos-linea" alt="Pagos en línea">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NOTICIAS (PRINCIPAL) ================= -->
+  <section class="news-section" id="noticias">
+    <div class="news-container">
+      <h2 class="section-title">NOTICIAS DEL DISTRITO</h2>
+
+      <div class="noticias">
+        <div class="noticias-container">
+          <div class="noticias-left">
+            <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2024/06/WhatsApp-Image-2024-06-25-at-11.43.01-AM.jpeg" alt="Imagen principal noticia" class="noticia-principal" />
+
+            <div class="noticias-grid">
+              <!-- Card 1 -->
+              <article class="noticia-card">
+                <a href="#"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2025/09/Voluntariado_2025.jpg" alt="Voluntariado 2025"></a>
+                <div class="fecha fecha--1">12 Sep</div>
+                <h2><a href="#">VOLUNTARIADO 2025 – MDMM</a></h2>
+                <p class="news-description">Únete a nuestro programa de voluntariado municipal y contribuye al desarrollo de tu distrito...</p>
+              </article>
+
+              <!-- Card 2 -->
+              <article class="noticia-card">
+                <a href="#"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2025/08/Subasta-02-2025-1024x1024.jpg" alt="Subasta pública"></a>
+                <div class="fecha fecha--2">13 Ago</div>
+                <h2><a href="#">SUBASTA PÚBLICA N° 002-2025</a></h2>
+                <p class="news-description">Subasta pública de bienes muebles programada para el mes de agosto. Consulta las bases...</p>
+              </article>
+
+              <!-- Card 3 -->
+              <article class="noticia-card">
+                <a href="#"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2025/08/Voluntariado-1-1024x548.png" alt="Programa voluntariado"></a>
+                <div class="fecha fecha--3">11 Ago</div>
+                <h2><a href="#">PROGRAMA DE VOLUNTARIADO 2025</a></h2>
+                <p class="news-description">Inscripciones abiertas hasta el 30 de septiembre. Participa en el desarrollo comunitario...</p>
+              </article>
+
+              <!-- Card 4 -->
+              <article class="noticia-card">
+                <a href="#"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2025/08/1.-TODO-LO-QUE-DEBES-SABER-EG-2026_002.png" alt="Elecciones 2026"></a>
+                <div class="fecha fecha--4">01 Ago</div>
+                <h2><a href="#">ONPE – ELECCIONES GENERALES 2026</a></h2>
+                <p class="news-description">Información importante sobre las próximas elecciones generales del 2026...</p>
+              </article>
+
+              <!-- Card 5 -->
+              <article class="noticia-card">
+                <a href="#"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2025/07/AFICHE-CASTELLANO-735x1024.jpeg" alt="Censos 2025"></a>
+                <div class="fecha fecha--5">30 Jul</div>
+                <h2><a href="#">CENSOS NACIONALES 2025</a></h2>
+                <p class="news-description">Participa en los censos nacionales 2025. Tu participación es fundamental para el país...</p>
+              </article>
+
+              <!-- Card 6 -->
+              <article class="noticia-card">
+                <a href="#"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2025/05/POST-DE-SUBASTA-PUBLICA-1024x1024.jpg" alt="Subasta 001-2025"></a>
+                <div class="fecha fecha--6">07 May</div>
+                <h2><a href="#">SUBASTA PUBLICA N° 001-2025-MDMM DE BIENES MUEBLES</a></h2>
+                <p class="news-description">Subasta de bienes muebles municipales. Revisa las bases y requisitos...</p>
+              </article>
+            </div>
+          </div>
+
+          <aside class="noticias-right" aria-labelledby="fb-widget">
+            <iframe id="fb-widget" title="Facebook Timeline" src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/MunicipalidadMarianoMelgar/&tabs=timeline&width=340&height=750&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false"
+              width="340" height="750" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+
+            <a href="https://munimarianomelgar.gob.pe/wp-content/uploads/2025/02/Anexo-N°-4-Cuadro-Multianual-de-Necesidades.pdf" target="_blank" rel="noopener">
+              <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2025/07/Cuadro_MN.png" class="Cuadro-MN" alt="Cuadro Multianual de Necesidades">
+            </a>
+
+            <a href="https://munimarianomelgar.gob.pe/wp-content/uploads/2024/11/SEGUNDA-AUDIENCIA-PUBLICA-2024.pdf" target="_blank" rel="noopener">
+              <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2024/11/2da-audiencia-publica.jpg" alt="2da audiencia pública">
+            </a>
+
+            <a href="https://munimarianomelgar.gob.pe/wp-content/uploads/2025/05/PRIMERA-AUDIENCIA-PUBLICA-2025.pdf" target="_blank" rel="noopener">
+              <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2025/05/1ra_Audiencia_Publica_2025.jpg" alt="1ra audiencia pública">
+            </a>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INFO CARDS ================= -->
+  <section class="info-cards-section">
+    <div class="info-cards-container">
+      <div class="info-cards-grid">
+        <div class="info-card" data-link="https://munimarianomelgar.gob.pe/sistema-de-control-interno/">
+          <div class="info-card-image" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2020/04/control_interno.png')"></div>
+          <div class="info-card-body">
+            <h3>CONTROL INTERNO</h3>
+            <p>Órgano de Control Institucional</p>
+          </div>
+        </div>
+
+        <div class="info-card" data-link="https://munimarianomelgar.gob.pe/wp-content/uploads/2025/04/INFORME-DE-RENDICION-DE-CUENTA-DE-TITULARES-MUNICIPALIDAD-DISTRITAL-DE-MARIANO-MELGAR.pdf">
+          <div class="info-card-image" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2024/05/INFORME-RENDICION-CUENTAS.jpeg')"></div>
+          <div class="info-card-body">
+            <h3>INFORME DE RENDICIÓN DE CUENTAS</h3>
+            <p>Informes financieros y de gestión municipal</p>
+          </div>
+        </div>
+
+        <div class="info-card" data-link="https://munimarianomelgar.gob.pe/obras-por-impuestos/">
+          <div class="info-card-image" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2021/11/obras.jpg')"></div>
+          <div class="info-card-body">
+            <h3>OBRAS POR IMPUESTOS</h3>
+            <p>Proyectos de inversión pública financiados por el sector privado</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PORTAL MUNICIPAL ================= -->
+  <section class="portal-municipalidad" data-portal>
+    <h6>ING. OSCAR ALFREDO AYALA ARENAS</h6>
+    <h3>Bienvenidos al portal de la Municipalidad de Mariano Melgar.</h3>
+  </section>
+
+  <!-- ================= ADDITIONAL SERVICES ================= -->
+  <section class="additional-services">
+    <div class="additional-services-container">
+      <div class="additional-grid">
+        <div class="additional-card" data-link="https://munimarianomelgar.gob.pe/presupuesto-participativo-2024/">
+          <div class="additional-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/participacion.png')"></div>
+          <div class="additional-title">PARTICIPACIÓN CIUDADANA</div>
+          <div class="additional-description">Presupuesto Participativo</div>
+        </div>
+
+        <div class="additional-card" data-link="https://munimarianomelgar.gob.pe/tramites/licencias-de-funcionamiento/">
+          <div class="additional-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/tienda.png')"></div>
+          <div class="additional-title">LICENCIA DE FUNCIONAMIENTO</div>
+          <div class="additional-description">Trámites, formularios, etc</div>
+        </div>
+
+        <div class="additional-card" data-link="https://munimarianomelgar.gob.pe/tramites/licencias-de-edificacion/">
+          <div class="additional-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/edificio-empire-state.png')"></div>
+          <div class="additional-title">LICENCIAS DE EDIFICACIÓN</div>
+          <div class="additional-description">Trámites, formularios, etc</div>
+        </div>
+
+        <div class="additional-card" data-link="https://munimarianomelgar.gob.pe/servicios/limpieza-publica/">
+          <div class="additional-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/trash.png')"></div>
+          <div class="additional-title">LIMPIEZA PÚBLICA</div>
+          <div class="additional-description">Lugares de Acopio, rutas, etc</div>
+        </div>
+
+        <div class="additional-card" data-link="#" data-alert="Información de DEMUNA disponible próximamente">
+          <div class="additional-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/mama.png')"></div>
+          <div class="additional-title">DEMUNA</div>
+          <div class="additional-description">Defensoría Municipal del Niño y del Adolescente</div>
+        </div>
+
+        <div class="additional-card" data-link="https://munimarianomelgar.gob.pe/tramites/matrimonio-civil/">
+          <div class="additional-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/certificado-de-boda.png')"></div>
+          <div class="additional-title">REGISTRO CIVIL</div>
+          <div class="additional-description">Trámites, formularios, etc</div>
+        </div>
+
+        <div class="additional-card" data-link="https://munimarianomelgar.gob.pe/oportunidad-laboral/">
+          <div class="additional-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/empresario.png')"></div>
+          <div class="additional-title">OPORTUNIDADES LABORALES</div>
+          <div class="additional-description">Procesos CAS, otros, etc</div>
+        </div>
+
+        <div class="additional-card" data-link="#" data-alert="Plataforma Virtual próximamente disponible">
+          <div class="additional-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/trabajando.png')"></div>
+          <div class="additional-title">PLATAFORMA VIRTUAL</div>
+          <div class="additional-description">Seguridad Ciudadana</div>
+        </div>
+
+        <div class="additional-card" data-link="https://munimarianomelgar.gob.pe/codisec-seguridad-ciudadana/">
+          <div class="additional-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/guardia.png')"></div>
+          <div class="additional-title">CODISEC</div>
+          <div class="additional-description">Comité Distrital de Seguridad Ciudadana</div>
+        </div>
+
+        <div class="additional-card" data-link="https://munimarianomelgar.gob.pe/instancia-distrital-de-concertacion/">
+          <div class="additional-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2024/12/IDC-1.png')"></div>
+          <div class="additional-title">IDC</div>
+          <div class="additional-description">INSTANCIA DISTRITAL DE CONCERTACIÓN</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COVID SECTION ================= -->
+  <section class="covid-section">
+    <div class="covid-container">
+      <div class="covid-illustration">
+        <div class="covid-graphic" role="img" aria-label="Ilustración COVID"></div>
+      </div>
+
+      <div class="covid-content">
+        <h2>CORONAVIRUS</h2>
+        <p>Manténgase al tanto del <strong>COVID-19</strong>, quédese en casa y seguro para usted y los demás, y mantenga todas las medidas de seguridad de los profesionales médicos.</p>
+
+        <div class="covid-buttons">
+          <a href="https://www.who.int/es/news-room/q-a-detail/coronavirus-disease-covid-19" target="_blank" rel="noopener" class="covid-btn">
+            <div class="covid-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2021/06/virus.svg')"></div>
+            <span>CORONAVIRUS</span>
+          </a>
+
+          <a href="https://www.gob.pe/coronavirus#recomendaciones" target="_blank" rel="noopener" class="covid-btn">
+            <div class="covid-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2021/06/first-aid-kit.svg')"></div>
+            <span>MEDIDAS Y RECOMENDACIONES</span>
+          </a>
+
+          <a href="https://covid19.minsa.gob.pe/sala_situacional.asp" target="_blank" rel="noopener" class="covid-btn">
+            <div class="covid-icon" style="background-image:url('https://munimarianomelgar.gob.pe/wp-content/uploads/2021/06/peru.svg')"></div>
+            <span>COVID-19 EN PERÚ</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OBRAS MUNICIPALES (SWIPER) ================= -->
+  <section class="obras-municipales">
+    <div class="titulo-obras"><h2>OBRAS MUNICIPALES</h2></div>
+
+    <div class="slider-wrapper">
+      <div class="swiper obrasSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/mmlegar-escudo-2.png" alt="obra 1" class="slide-logo">
+            <p class="slide-description">Mejoramiento de la calle Sanchez Cerro</p>
+            <div class="slide-meta">P.J. ATALAYA – 2021</div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/mmlegar-escudo-2.png" alt="obra 2" class="slide-logo">
+            <p class="slide-description">Inicio de nueva obra en Mariano Bustamante</p>
+            <div class="slide-meta">AA.HH. Alto Mariano – 2020</div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/mmlegar-escudo-2.png" alt="obra 3" class="slide-logo">
+            <p class="slide-description">Seguimos mejorando el ornato del distrito</p>
+            <div class="slide-meta">Limpieza de vías – 2021</div>
+          </div>
+
+          <div class="swiper-slide">
+            <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/02/Sin-titulo-2.fw_.png" alt="obra 4" class="slide-logo">
+            <p class="slide-description">Mejoramiento del Jirón Base Sur</p>
+            <div class="slide-meta">AA.HH. Villa Alto Cenepa – 2021</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-button-prev obras-prev"></div>
+      <div class="swiper-button-next obras-next"></div>
+    </div>
+  </section>
+
+  <!-- ================= PARTNERS / LOGOS (SWIPER) ================= -->
+  <section class="slider-content">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide log">
+          <a href="https://www.bn.com.pe/" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/1.png" alt="BN"></a>
+        </div>
+        <div class="swiper-slide log">
+          <a href="https://www.pj.gob.pe/" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/14.png" alt="PJ"></a>
+        </div>
+        <div class="swiper-slide log">
+          <a href="https://www.defensoria.gob.pe/" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/13.png" alt="Defensoría"></a>
+        </div>
+        <div class="swiper-slide log">
+          <a href="https://www.indeci.gob.pe/" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/12.png" alt="Indeci"></a>
+        </div>
+        <div class="swiper-slide log">
+          <a href="https://www.sunat.gob.pe/" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/10.png" alt="Sunat"></a>
+        </div>
+        <div class="swiper-slide log">
+          <a href="https://www.gob.pe/pcm" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/11.png" alt="PCM"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LIBRO DE RECLAMACIONES / FOOTER-CONTAINER ================= -->
+  <div class="footer-container">
+    <div class="footer-section">
+      <div class="footer-logo-section">
+        <div class="footer-logo"></div>
+        <div class="footer-logo-text">
+          <a href="#"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/muni-marianomelgar.png" alt="Logo Muni"></a>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a href="https://www.facebook.com/MunicipalidadMarianoMelgar/" target="_blank" rel="noopener" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="informacion-section">
+      <h3>Información de Contacto</h3>
+      <p><strong>Dirección:</strong> Av. Simón Bolivar N°908, Mariano Melgar</p>
+      <p><strong>Central telefónica:</strong> (054) 452289</p>
+      <p><strong>Correo electrónico:</strong> info@munimarianomelgar.gob.pe</p>
+      <p><strong>Horario de atención al público:</strong> Lunes a viernes de 8:00 a 16:00 hrs</p>
+    </div>
+
+    <div class="enlaces-section">
+      <div class="footer-links">
+        <a href="#" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/libro_reclamaciones.png" class="img-logo" alt="Libro de Reclamaciones"></a>
+        <a href="#" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/webmail-1.png" class="img-logo" alt="Webmail"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-bottom">
+      <p class="copy">2025 © Municipalidad Distrital de Mariano Melgar. <br> Todos los derechos reservados.</p>
+      <p class="autor">Desarrollado por <strong>Víctor Hugo♟️</strong></p>
+    </div>
+  </footer>
+
+  <!-- ================= WHATSAPP FLOAT ================= -->
+  <a href="https://api.whatsapp.com/send?phone=51924097418&text=¡Hola! Deseo comunicarme con GAT" target="_blank" class="whatsapp-float" rel="noopener">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    <span class="wa-text">¡Hola! escríbenos tu consulta tributaria aquí</span>
+  </a>
+
+  <!-- ================= BOTÓN SCROLLTOP ================= -->
+  <button class="btn-scrolltop" id="btn_scrolltop" title="Subir" aria-label="Subir al inicio">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- =================== SCRIPT PRINCIPAL (inline) =================== -->
+  <script>
+    /* =========================
+       Funciones y comportamiento JS
+       ========================= */
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // --------- Menú hamburguesa (toggle) ---------
+      const hamburger = document.getElementById('hamburger');
+      const menu = document.getElementById('menu');
+      hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        hamburger.classList.toggle('is-open');
+      });
+
+      // Cerrar menú cuando se hace click fuera (en móvil)
+      document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !menu.contains(e.target) && window.innerWidth <= 768) {
+          menu.classList.remove('active');
+          hamburger.classList.remove('is-open');
+        }
+      });
+
+      // --------- Abrir enlaces desde data-link (tarjetas) ---------
+      document.querySelectorAll('[data-link]').forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+          const url = card.getAttribute('data-link');
+          const alertMsg = card.getAttribute('data-alert');
+          if (alertMsg) {
+            alert(alertMsg);
+            return;
+          }
+          if (url && url !== '#') window.open(url, '_blank');
+        });
+      });
+
+      // --------- Intersection Observer: fade-in de secciones (animaciones) ---------
+      const animatedItems = document.querySelectorAll('section, .service-card, .noticia-card, .info-card, .additional-card, .service-card, .swiper-slide');
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+
+      animatedItems.forEach(el => io.observe(el));
+
+      // --------- Slider de videos (simple, CSS transform) ---------
+      (function initVideoSlider() {
+        const slidesWrap = document.getElementById('slides');
+        if (!slidesWrap) return;
+        let index = 0;
+        const total = slidesWrap.children.length;
+        const indicators = document.getElementById('indicators');
+        // crear indicadores
+        for (let i = 0; i < total; i++) {
+          const dot = document.createElement('button');
+          dot.className = 'dot';
+          dot.setAttribute('aria-label', 'Ir al slide ' + (i + 1));
+          dot.addEventListener('click', () => showSlide(i));
+          indicators.appendChild(dot);
+        }
+        const dots = indicators.querySelectorAll('.dot');
+
+        function showSlide(i) {
+          index = (i + total) % total;
+          slidesWrap.style.transform = `translateX(-${index * 100}%)`;
+          dots.forEach((d, idx) => d.classList.toggle('active', idx === index));
+        }
+
+        // next/prev
+        document.getElementById('nextSlide').addEventListener('click', () => showSlide(index + 1));
+        document.getElementById('prevSlide').addEventListener('click', () => showSlide(index - 1));
+
+        // autoplay
+        let autoplay = setInterval(() => showSlide(index + 1), 6000);
+        // pausa on hover
+        const sliderEl = document.querySelector('.slider');
+        sliderEl.addEventListener('mouseenter', () => clearInterval(autoplay));
+        sliderEl.addEventListener('mouseleave', () => { autoplay = setInterval(() => showSlide(index + 1), 6000); });
+
+        // init
+        showSlide(0);
+      })();
+
+      // --------- Iniciar Swiper sliders (obras y partners) ---------
+      // obrasSwiper
+      const obrasSwiper = new Swiper('.obrasSwiper', {
+        loop: true,
+        autoplay: { delay: 3500, disableOnInteraction: false },
+        navigation: { nextEl: '.obras-next', prevEl: '.obras-prev' },
+        slidesPerView: 1,
+        spaceBetween: 20,
+        breakpoints: { 640: { slidesPerView: 1 }, 1024: { slidesPerView: 2 } }
+      });
+
+      // partners carousel (logos)
+      const partnersSwiper = new Swiper('.mySwiper', {
+        loop: true,
+        slidesPerView: 4,
+        spaceBetween: 20,
+        autoplay: { delay: 2200, disableOnInteraction: false },
+        breakpoints: { 320: { slidesPerView: 1 }, 640: { slidesPerView: 2 }, 1024: { slidesPerView: 4 } }
+      });
+
+      // --------- Botón scroll to top ---------
+      const btnScrollTop = document.getElementById('btn_scrolltop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) btnScrollTop.classList.add('btn-scrolltop-on');
+        else btnScrollTop.classList.remove('btn-scrolltop-on');
+      });
+
+      btnScrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      // --------- Small enhancement: close submenu on small screens when clicking a link ---------
+      document.querySelectorAll('.submenu a').forEach(a => a.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          menu.classList.remove('active');
+          hamburger.classList.remove('is-open');
+        }
+      }));
+    }); // DOMContentLoaded
+  </script>
+</body>
+</html>
