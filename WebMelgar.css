@@ -665,7 +665,7 @@ body {
 
 /* ==================== PORTAL MUNICIPAL ==================== */
 .portal-municipalidad {
-  background: #cecccc;
+  background: #bfcff1;
   height: 150px;
   display: flex;
   justify-content: center;
@@ -774,11 +774,11 @@ body {
     center/contain no-repeat;
 }
 
-/* ==================== OBRAS (SWIPER) ==================== */
+/* ==================== OBRAS MUNICIPALES (SWIPER) ==================== */
 .obras-municipales {
   max-height: 600px;
   padding: 40px;
-  background: #ffffff;
+  background: #ece9e9;
 }
 .titulo-obras h2 {
   text-align: center;
@@ -786,84 +786,134 @@ body {
   color: #108805;
   font-weight: bold;
   font-size: 2em;
-  background: #fff;
 }
+* { box-sizing: border-box; }     
 .slider-wrapper {
-  position: relative;
-  width: 100%;
-  background: #fffdfd;
-  padding-bottom: 60px;
-}
+      position: relative;
+      width: 100%;
+    }
+
+    .swiper {
+      width: 100%;
+      max-width: 1300px;
+      margin: auto;
+      padding: 0 20px; /* Para evitar corte visual */
+    }
+
+    .swiper-slide {
+      background: rgb(255, 255, 255);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-logo {
+      width: 150px;
+      margin-bottom: 1rem;
+    }
+
+    .slide-description {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .slide-meta {
+      font-weight: bold;
+      color: #004080;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #004080;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .swiper-button-prev {
+      left: 150px;
+      transform: translate(-50%, -50%);
+    }
+
+    .swiper-button-next {
+      right: 150px;
+      transform: translate(50%, -50%);
+    }
+
+    @media (max-width: 768px) {
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+      }
+    }
+
+    /* ================= PARTNERS / LOGOS (SWIPER) ================= */
+    /* Contenedor principal del slider */
 .swiper {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1100px; /* más ancho en desktop */
   margin: auto;
-  padding: 0 20px;
-}
-.swiper-slide {
-  background: rgb(238, 239, 243);
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.slide-logo {
-  width: 150px;
-  margin-bottom: 1rem;
-}
-.slide-description {
-  font-size: 1rem;
-  margin-bottom: 0.6rem;
-}
-.slide-meta {
-  font-weight: 700;
-  color: #004080;
+  padding: 20px 0;
 }
 
-/* posicionamiento flechas swiper */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #004080;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-.swiper-button-prev {
-  left: 150px;
-  transform: translate(-50%, -50%);
-}
-.swiper-button-next {
-  right: 150px;
-  transform: translate(50%, -50%);
-}
-
-/* partners logos slider */
-.slider-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 150px;
-  background: #7b8eb6;
-  padding: 20px;
-}
-.swiper.mySwiper {
-  width: 90%;
-  max-width: 900px;
-  padding: 15px 0;
-}
-.swiper-slide.log img {
-  width: 60%;
+/* Ajuste de las imágenes */
+.swiper-slide img {
+  width: 100%;
+  max-width: 180px;   /* ancho máximo de logos */
   height: auto;
   max-height: 100px;
   object-fit: contain;
   transition: transform 0.3s ease;
+  display: block;
+  margin: auto;
 }
-.swiper-slide.log:hover img {
+
+/* Efecto hover */
+.swiper-slide a:hover img {
   transform: scale(1.05);
+}
+
+/* ================== MEDIA QUERIES ================== */
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 639px) {
+  .swiper {
+    max-width: 50%;
+    padding: 10px 0;
+    
+  }
+  .swiper-slide img {
+    max-width: 120px;
+    max-height: 80px;
+    
+  }
+}
+
+/* Pantallas medianas (tablets) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .swiper {
+    max-width: 50%;
+  }
+  .swiper-slide img {
+    max-width: 150px;
+    max-height: 90px;
+  }
+}
+
+/* Pantallas grandes (desktop) */
+@media (min-width: 1024px) {
+  .swiper {
+    max-width: 50%;
+  }
+  .swiper-slide img {
+    max-width: 180px;
+    max-height: 100px;
+  }
 }
 
 /* ==================== FOOTER / LIBRO DE RECLAMACIONES ==================== */
@@ -915,7 +965,12 @@ body {
   gap: 20px;
 }
 .img-logo {
-  width: 220px;
+  width: 200px;
+  height: auto;
+}
+
+.webmail{
+  width: 150px;
   height: auto;
 }
 
@@ -1260,6 +1315,13 @@ section,
   }
   .portal-municipalidad h3 {
     font-size: 18px;
+    font-weight: bold;
+  }
+  .portal-municipalidad h6{
+    font-size: 16px;
+  }
+  .portal-municipalidad .bienvenidos{
+    text-align: center;
   }
   .section-title {
     font-size: 22px;

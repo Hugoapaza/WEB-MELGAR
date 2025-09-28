@@ -9,9 +9,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
   <!-- Swiper (único import para sliders/partners/obras) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Swiper.js JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <!-- Tu CSS (en la siguiente parte te lo doy completo) -->
   <link rel="stylesheet" href="WebMelgar.css" />
 </head>
@@ -291,7 +293,7 @@
   <!-- ================= PORTAL MUNICIPAL ================= -->
   <section class="portal-municipalidad" data-portal>
     <h6>ING. OSCAR ALFREDO AYALA ARENAS</h6>
-    <h3>Bienvenidos al portal de la Municipalidad de Mariano Melgar.</h3>
+    <h3 class="bienvenidos">Bienvenidos al portal de la Municipalidad de Mariano Melgar</h3>
   </section>
 
   <!-- ================= ADDITIONAL SERVICES ================= -->
@@ -396,64 +398,85 @@
   <section class="obras-municipales">
     <div class="titulo-obras"><h2>OBRAS MUNICIPALES</h2></div>
 
-    <div class="slider-wrapper">
-      <div class="swiper obrasSwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/mmlegar-escudo-2.png" alt="obra 1" class="slide-logo">
-            <p class="slide-description">Mejoramiento de la calle Sanchez Cerro</p>
-            <div class="slide-meta">P.J. ATALAYA – 2021</div>
-          </div>
+  <div class="slider-wrapper">
+    <!-- Swiper -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
 
-          <div class="swiper-slide">
-            <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/mmlegar-escudo-2.png" alt="obra 2" class="slide-logo">
-            <p class="slide-description">Inicio de nueva obra en Mariano Bustamante</p>
-            <div class="slide-meta">AA.HH. Alto Mariano – 2020</div>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/mmlegar-escudo-2.png" alt="obra 3" class="slide-logo">
-            <p class="slide-description">Seguimos mejorando el ornato del distrito</p>
-            <div class="slide-meta">Limpieza de vías – 2021</div>
-          </div>
-
-          <div class="swiper-slide">
-            <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/02/Sin-titulo-2.fw_.png" alt="obra 4" class="slide-logo">
-            <p class="slide-description">Mejoramiento del Jirón Base Sur</p>
-            <div class="slide-meta">AA.HH. Villa Alto Cenepa – 2021</div>
-          </div>
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/mmlegar-escudo-2.png" alt="Logo" class="slide-logo">
+          <p class="slide-description">Mejoramiento de la calle Sanchez Cerro</p>
+          <div class="slide-meta">P.J. ATALAYA – 2021</div>
         </div>
-      </div>
 
-      <div class="swiper-button-prev obras-prev"></div>
-      <div class="swiper-button-next obras-next"></div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/mmlegar-escudo-2.png" alt="Logo" class="slide-logo">
+          <p class="slide-description">Inicio de nueva obra en Mariano Bustamante</p>
+          <div class="slide-meta">AA.HH. Alto Mariano – 2020</div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2019/08/mmlegar-escudo-2.png" alt="Logo" class="slide-logo">
+          <p class="slide-description">Seguimos mejorando el ornato del distrito</p>
+          <div class="slide-meta">Limpieza de vías – 2021</div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/02/Sin-titulo-2.fw_.png" alt="Logo" class="slide-logo">
+          <p class="slide-description">Mejoramiento del Jirón Base Sur</p>
+          <div class="slide-meta">AA.HH. Villa Alto Cenepa – 2021</div>
+        </div>
+
+      </div>
     </div>
+
+    <!-- Botones fuera del .swiper -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
   </section>
 
   <!-- ================= PARTNERS / LOGOS (SWIPER) ================= -->
   <section class="slider-content">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide log">
-          <a href="https://www.bn.com.pe/" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/1.png" alt="BN"></a>
-        </div>
-        <div class="swiper-slide log">
-          <a href="https://www.pj.gob.pe/" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/14.png" alt="PJ"></a>
-        </div>
-        <div class="swiper-slide log">
-          <a href="https://www.defensoria.gob.pe/" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/13.png" alt="Defensoría"></a>
-        </div>
-        <div class="swiper-slide log">
-          <a href="https://www.indeci.gob.pe/" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/12.png" alt="Indeci"></a>
-        </div>
-        <div class="swiper-slide log">
-          <a href="https://www.sunat.gob.pe/" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/10.png" alt="Sunat"></a>
-        </div>
-        <div class="swiper-slide log">
-          <a href="https://www.gob.pe/pcm" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/11.png" alt="PCM"></a>
-        </div>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- Cada slide con enlace -->
+      <div class="swiper-slide">
+        <a href="https://www.bn.com.pe/" target="_blank">
+          <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/1.png" alt="Sponsor 1">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://www.pj.gob.pe/" target="_blank">
+          <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/14.png" alt="Sponsor 2">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://www.defensoria.gob.pe/" target="_blank">
+          <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/13.png" alt="Sponsor 3">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://www.indeci.gob.pe/" target="_blank">
+          <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/12.png" alt="Sponsor 4">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://www.sunat.gob.pe/" target="_blank">
+          <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/10.png" alt="Sponsor 5">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://www.gob.pe/pcm" target="_blank">
+          <img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/11.png" alt="Sponsor 6">
+        </a>
       </div>
     </div>
+  </div>
   </section>
 
   <!-- ================= LIBRO DE RECLAMACIONES / FOOTER-CONTAINER ================= -->
@@ -484,7 +507,7 @@
     <div class="enlaces-section">
       <div class="footer-links">
         <a href="#" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/libro_reclamaciones.png" class="img-logo" alt="Libro de Reclamaciones"></a>
-        <a href="#" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/webmail-1.png" class="img-logo" alt="Webmail"></a>
+        <a href="#" target="_blank" rel="noopener"><img src="https://munimarianomelgar.gob.pe/wp-content/uploads/2020/09/webmail-1.png" class="webmail img-logo" alt="Webmail"></a>
       </div>
     </div>
   </div>
@@ -492,7 +515,7 @@
   <!-- ================= FOOTER ================= -->
   <footer class="footer" role="contentinfo">
     <div class="footer-bottom">
-      <p class="copy">2025 © Municipalidad Distrital de Mariano Melgar. <br> Todos los derechos reservados.</p>
+      <p class="copy">2025 © Municipalidad Distrital de Mariano Melgar. Todos los derechos reservados.</p>
       <p class="autor">Desarrollado por <strong>Víctor Hugo♟️</strong></p>
     </div>
   </footer>
@@ -596,16 +619,6 @@
         showSlide(0);
       })();
 
-      // --------- Iniciar Swiper sliders (obras y partners) ---------
-      // obrasSwiper
-      const obrasSwiper = new Swiper('.obrasSwiper', {
-        loop: true,
-        autoplay: { delay: 3500, disableOnInteraction: false },
-        navigation: { nextEl: '.obras-next', prevEl: '.obras-prev' },
-        slidesPerView: 1,
-        spaceBetween: 20,
-        breakpoints: { 640: { slidesPerView: 1 }, 1024: { slidesPerView: 2 } }
-      });
 
       // partners carousel (logos)
       const partnersSwiper = new Swiper('.mySwiper', {
@@ -634,5 +647,40 @@
       }));
     }); // DOMContentLoaded
   </script>
+<script>
+  //=======Swiper Obras Municipales========
+  const swiperObras = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    slidesPerView: 1,
+    spaceBetween: 20
+  });
+</script>
+
+<script>
+  //================= PARTNERS / LOGOS (SWIPER) =================
+  const swiperGaleria = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      320: { slidesPerView: 1 },   // móviles
+      640: { slidesPerView: 2 },   // tablets
+      1024: { slidesPerView: 4 },  // escritorio
+    }
+  });
+</script>
+
 </body>
 </html>
